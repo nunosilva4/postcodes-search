@@ -1,0 +1,64 @@
+{
+    "searchBarContainer": {
+        "color": "black",
+        "backgroundColor": "white",
+        "padding": "10px",
+        "fontFamily": "Arial",
+        "display": "flex",
+        "alignItems": "center",
+        "flexDirection": "column"
+    },
+    "headerContainer": {
+        "color": "white",
+        "backgroundImage": "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        "padding": "10px",
+        "fontFamily": "Arial",
+        "display": "flex",
+        "justifyContent": "center",
+        "fontSize": 23
+    },
+    "error": {
+        "color": "red"
+    },
+    "detailsContainer": {
+        "display": "flex",
+        "flexDirection": "column",
+        "textAlign": "center",
+        "alignItems": "center"
+    },
+    "lastSearchDiv": {
+        "textAlign": "center"
+    },
+    "lastSearchBtn": {
+        "padding": 12,
+        "margin": 2,
+        "fontSize": 20
+    },
+    "detailedDiv": {
+        "display": "block",
+        "justifyContent": "center",
+        "border": "solid",
+        "padding": 20,
+        "marginTop": 10,
+        "width": 600,
+        "borderRadius": "5px",
+        "borderColor": "rgba(9,9,121,1)",
+        "flexDirection": "column",
+        "alignContent": "center",
+        "backgroundImage": "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        "color": "white",
+        "borderWidth": "1px"
+    },
+    "searchBtn": {
+        "width": "20%",
+        "padding": 10,
+        "marginTop": 10,
+        "fontSize": 20
+    },
+    "searchInput": {
+        "width": "20%",
+        "padding": 10,
+        "textAlign": "center",
+        "fontSize": 20
+    }
+}
