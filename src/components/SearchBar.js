@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
-import styles from '../style/styles.json';
-import Details from './Details.jsx';
+import Details from './Details.js';
+import '../App.css';
 
-export default function SearchBar() {
+export default function SearchBar() { 
 
     const [input, setInput] = useState("");
     const [clicked, setClicked] = useState(false);
     const [toSearch, setToSearch] = useState('');
 
-    let click = () => {
+    const click = () => {
+        if(!input) return
         setClicked(true);
         setToSearch(input);
     }
 
     return (
-        <div style={styles.searchBarContainer}>
+        <div className="SearchBar">
             <input
                 value={input}
                 onChange={({ target }) => setInput(target.value)}
                 placeholder={"PostCode"}
-                style={styles.searchInput}
+                className="SearchInput"
+                onKeyDown={(key) => {
+                    if(key.code === 'Enter' || key.code === 'NumpadEnter'){
+                        click()
+                    }
+                }}
             />
-            <button style={styles.searchBtn} onClick={click}>
+            <button className="SearchBtn" onClick={click}>
                 Search
             </button>
             {clicked &&

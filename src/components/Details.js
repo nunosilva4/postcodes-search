@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../style/styles.json';
-import DetailedInformation from './DetailedInformation.jsx';
+import DetailsCard from './DetailsCard.js';
+import '../App.css';
+import LastSearched from './LastSearched.js';
 
 export default function Details(props) {
 
@@ -12,6 +13,7 @@ export default function Details(props) {
 
     useEffect(() => {
         doGet();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.postCode]);
 
     const updateList = (code) => {
@@ -26,20 +28,6 @@ export default function Details(props) {
         if (!(postCode === lastCode)) {
             doGet(postCode);
         }
-    }
-
-    const LastSearched = (props) => {
-        return (
-            <div style={styles.lastSearchDiv}>
-                {props.postCodes.map((item, i) => {
-                    return <button
-                        key={i}
-                        style={styles.lastSearchBtn}
-                        onClick={() => checkRepeating(item)}>{item}
-                    </button>
-                })}
-            </div>
-        )
     }
 
     const doGet = (postCode) => {
@@ -64,16 +52,16 @@ export default function Details(props) {
     }
 
     return (
-        <div style={styles.detailsContainer}>
+        <div className="Details">
             <h2>Last searches:</h2>
-            <LastSearched postCodes={postCodes} />
+            <LastSearched postCodes={postCodes} check={checkRepeating}/>
             {
-                error &&
-                <h1 style={styles.error}>Invalid Post Code</h1>
-                ||
-                loaded &&
-                <DetailedInformation response={response} />
-                ||
+                error ? 
+                <h1 className="Error">Invalid Post Code</h1> 
+                :
+                loaded ?
+                <DetailsCard response={response} />
+                :
                 <h1>LOADING</h1>
             }
         </div>

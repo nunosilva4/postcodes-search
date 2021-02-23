@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../style/styles.json';
+import '../App.css';
 
 export default function Header() {
     return (
-        <div style={styles.headerContainer}>
+        <div className="Header">
             <h1>UK Post Code Api Search</h1>
         </div>
     )
